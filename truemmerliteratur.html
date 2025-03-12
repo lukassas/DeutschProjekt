@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trümmerliteratur – Schulprojekt</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Existing styles from the original HTML */
+    .section-container {
+      margin-bottom: 30px;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+   .timeline {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: 15px;
+    }
+    .timeline-item {
+      display: inline-block;
+      width: 250px;
+      margin-right: 10px;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      vertical-align: top;
+      white-space: normal;
+    }
+    
+     
+    .quotes-section {
+      width: 100%;
+    }
+    .quotes-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .quotes-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .quote-card {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    .quote-card:hover {
+      transform: scale(1.05);
+    }
+    .quote-card blockquote {
+      font-style: italic;
+      margin: 15px 0;
+      line-height: 1.5;
+      font-size: 1.1em;
+    }
+    .quote-card p {
+      color: #666;
+      font-size: 0.9em;
+    }
+    .audio-button {
+      background-color: #2a7ae2;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+    .audio-button:hover {
+      background-color: #1e5bb8;
+    }
+    
+    .historical-context {
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    
+    /* Existing quiz styles */
+    .quiz-container {
+      margin: 20px 0;
+    }
+    .quiz-question-container {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .quiz-question-container h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    .quiz-options label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 3px;
+      transition: background-color 0.3s;
+    }
+    .quiz-options label:hover {
+      background-color: #e0e7f1;
+    }
+    #submitQuiz {
+      background-color: #2a7ae2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #submitQuiz:hover {
+      background-color: #1e5bb8;
+    }
+    #quizResult {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Trümmerliteratur</h1>
+    <p>Teil des Projekts: Rahmenthema 5 – Literatur und Sprache von 1945 bis zur Gegenwart</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="truemmerliteratur.html">Trümmerliteratur</a></li>
+      <li><a href="gegenwartsliteratur.html">Gegenwartsliteratur</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <!-- Definition der Trümmerliteratur -->
+    <section class="section-container" id="definition">
+      <h2>Was ist Trümmerliteratur?</h2>
+      <p>
+        Trümmerliteratur bezeichnet die literarische Auseinandersetzung mit den Zerstörungen und der Nachkriegsrealität. Die Autoren nutzen die Trümmerlandschaft als Symbol für ein zerstörtes, aber zugleich im Aufbau begriffenes Land.
+      </p>
+      <p>
+        Charakteristische Merkmale dieser Literaturströmung sind:
+      </p>
+      <ul>
+        <li>Nüchterner, direkter Sprachgebrauch</li>
+        <li>Thematische Auseinandersetzung mit Zerstörung und Neuanfang</li>
+        <li>Reflexion von Verlust, Schuld und Hoffnung</li>
+        <li>Kritische Auseinandersetzung mit der Kriegserfahrung</li>
+      </ul>
+      <p>
+        Bekannte Autoren dieser Strömung sind unter anderem <strong>Wolfgang Borchert</strong>, <strong>Heinrich Böll</strong> und <strong>Wolfgang Weyrauch</strong>.
+      </p>
+    </section>
+    
+    <!-- Historischer Kontext -->
+    <section class="section-container historical-context">
+      <h2>Historischer Kontext</h2>
+      <p>
+        Die Trümmerliteratur entstand unmittelbar nach dem Ende des Zweiten Weltkriegs. Sie ist ein literarischer Ausdruck der traumatischen Erfahrungen von Krieg, Zerstörung und Neuanfang. In einer Zeit, in der Städte in Trümmern lagen und die Gesellschaft vor enormen Herausforderungen stand, wurde Literatur zum Mittel der Verarbeitung und Reflexion.
+      </p>
+      <p>
+        Zentrale Themen waren:
+      </p>
+      <ul>
+        <li>Die physische und psychische Zerstörung durch den Krieg</li>
+        <li>Die Suche nach individueller und kollektiver Identität</li>
+        <li>Moralische Fragen nach Schuld und Verantwortung</li>
+        <li>Der Wiederaufbau von Gesellschaft und Menschlichkeit</li>
+      </ul>
+    </section>
+    
+    <!-- Timeline mit Schlüsselwerken -->
+  <section class="section-container" id="timeline">
+    <h2>Entwicklung der Trümmerliteratur (1945-1950)</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>1945: Kriegsende</h3>
+        <p>Beginn der Nachkriegszeit, Städte in Trümmern</p>
+      </div>
+      <div class="timeline-item">
+        <h3>1946-1947: Erste literarische Zeugnisse</h3>
+        <p>Autoren beginnen, Kriegserfahrungen zu verarbeiten</p>
+      </div>
+      <div class="timeline-item">
+        <h3>1947: Borcherts Schlüsselwerk</h3>
+        <p>"Draußen vor der Tür" veröffentlicht</p>
+      </div>
+      <div class="timeline-item">
+        <h3>1948-1950: Diskursiver Wiederaufbau</h3>
+        <p>Literarische Sprache entwickelt sich weiter</p>
+      </div>
+    </div>
+  </section>
+    
+   <!-- Zitate-Bereich -->
+  <section class="section-container quotes-section">
+    <h2>Repräsentative Zitate der Trümmerliteratur</h2>
+    <div class="quotes-container">
+      <div class="quote-card">
+        <h3>Wolfgang Borchert</h3>
+        <blockquote>
+          „Und der Himmel, so grau wie die Trümmer, spricht von verlorener Zeit."
+        </blockquote>
+        <p>Symbolisiert die melancholische Atmosphäre und den schmerzlichen Neubeginn.</p>
+        <button class="audio-button" onclick="playAudio('audio/Wolfgang_Borchert.mp3')">Audio abspielen</button>
+      </div>
+      <div class="quote-card">
+        <h3>Heinrich Böll</h3>
+        <blockquote>
+          „Die Stille in den Ruinen ist lauter als jedes Wort."
+        </blockquote>
+        <p>Verdeutlicht den Kontrast zwischen zerstörter Welt und leiser Hoffnung.</p>
+        <button class="audio-button" onclick="playAudio('audio/Heinrich_Boell.mp3')">Audio abspielen</button>
+      </div>
+      <div class="quote-card">
+        <h3>Anonymes Zitat</h3>
+        <blockquote>
+          „Aus den Scherben der Vergangenheit wächst der keimende Samen der Zukunft."
+        </blockquote>
+        <p>Symbolisiert den Prozess des Wiederaufbaus und der Hoffnung.</p>
+        <button class="audio-button" onclick="playAudio('audio/Anonymes_Zitat.mp3')">Audio abspielen</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio-Player -->
+  <audio id="audioPlayer" style="display:none;"></audio>
+
+  <script>
+    function playAudio(audioFile) {
+      const audioPlayer = document.getElementById('audioPlayer');
+      audioPlayer.src = audioFile;
+      audioPlayer.play();
+    }
+  </script>
+  
+    <!-- Quiz-Bereich -->
+    <section class="section-container" id="quiz">
+      <h2>Interaktives Quiz: Kennst du die Trümmerliteratur?</h2>
+      <div id="quizContainer" class="quiz-container"></div>
+      <button id="submitQuiz">Quiz absenden</button>
+      <div id="quizResult"></div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Schulprojekt – Henning, Lasse, Timo und Lukas</p>
+  </footer>
+  
+  <!-- JavaScript für interaktive Elemente -->
+  <script>
+    // Simulierte Audio-Lesung
+    function playAudioQuote() {
+      alert("Audio-Lesung wird abgespielt... (Simulation)");
+      // Hier könnte ein echtes Audio-Element genutzt werden.
+    }
+
+    // Array mit Quizfragen (5 Fragen)
+    const quizQuestions = [
+      {
+        question: "Was kennzeichnet die Trümmerliteratur?",
+        options: [
+          "Sie entstand nach dem Zweiten Weltkrieg und verarbeitet die Zerstörungen der Nachkriegszeit.",
+          "Sie beschäftigt sich mit Zukunftsvisionen.",
+          "Sie entstand in den 1960er Jahren."
+        ],
+        correctAnswer: 0
+      },
+      {
+        question: "Welche Themen werden in der Trümmerliteratur häufig behandelt?",
+        options: [
+          "Wiederaufbau, Zerstörung und Neuanfang.",
+          "Technologische Fortschritte.",
+          "Futuristische Utopien."
+        ],
+        correctAnswer: 0
+      },
+      {
+        question: "Welche Autoren sind bekannt für ihre Beiträge zur Trümmerliteratur?",
+        options: [
+          "Wolfgang Borchert und Heinrich Böll.",
+          "Thomas Mann und Franz Kafka.",
+          "Goethe und Schiller."
+        ],
+        correctAnswer: 0
+      },
+      {
+        question: "Welches literarische Element ist charakteristisch für die Trümmerliteratur?",
+        options: [
+          "Die direkte Auseinandersetzung mit den Folgen des Krieges.",
+          "Die Romantisierung der Vergangenheit.",
+          "Abstrakte, schwer verständliche Symbole."
+        ],
+        correctAnswer: 0
+      },
+      {
+        question: "Warum gilt die Trümmerliteratur als Spiegel der Nachkriegszeit?",
+        options: [
+          "Weil sie die Zerstörung und den Wiederaufbau thematisiert.",
+          "Weil sie sich mit Zukunftsvisionen beschäftigt.",
+          "Weil sie in einer völlig anderen Epoche entstand."
+        ],
+        correctAnswer: 0
+      }
+    ];
+
+    // Funktion zur Darstellung des Quiz
+    function renderQuiz() {
+      const quizContainer = document.getElementById('quizContainer');
+      quizContainer.innerHTML = '';
+
+      quizQuestions.forEach((q, index) => {
+        // Erstellen des Container-Divs für jede Frage
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'quiz-question-container';
+
+        // Frageüberschrift
+        const questionTitle = document.createElement('h3');
+        questionTitle.textContent = `Frage ${index + 1}: ${q.question}`;
+        questionDiv.appendChild(questionTitle);
+
+        // Optionsliste
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'quiz-options';
+
+        q.options.forEach((option, optionIndex) => {
+          const label = document.createElement('label');
+          const radioInput = document.createElement('input');
+          radioInput.type = 'radio';
+          radioInput.name = 'question' + index;
+          radioInput.value = optionIndex;
+          label.appendChild(radioInput);
+          label.appendChild(document.createTextNode(' ' + option));
+          optionsDiv.appendChild(label);
+        });
+
+        questionDiv.appendChild(optionsDiv);
+        quizContainer.appendChild(questionDiv);
+      });
+    }
+
+    // Funktion zur Prüfung der Antworten und Berechnung der Punkte
+    function checkQuiz() {
+      let score = 0;
+      quizQuestions.forEach((q, index) => {
+        const selectedOption = document.querySelector('input[name="question' + index + '"]:checked');
+        if (selectedOption && parseInt(selectedOption.value) === q.correctAnswer) {
+          score++;
+        }
+      });
+      const quizResult = document.getElementById('quizResult');
+      quizResult.textContent = `Du hast ${score} von ${quizQuestions.length} Punkten erreicht.`;
+    }
+
+    // Initialisierung des Quiz nach dem Laden der Seite
+    document.addEventListener('DOMContentLoaded', function() {
+      renderQuiz();
+      document.getElementById('submitQuiz').addEventListener('click', checkQuiz);
+    });
+  </script>
+</body>
+</html>

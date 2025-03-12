@@ -1,0 +1,88 @@
+/* Globales Styling */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #9d9c9a;  /* Papierton-Optik */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: #2a7ae2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background-color: #251B49;  /* Warmer, literarischer Farbton */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header h2 {
+  margin: 10px 0 0;
+  font-size: 1.5em;
+}
+
+/* Navigation */
+nav {
+  background-color: #eee;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+/* Hauptinhalt */
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.intro, .media-preview, .content-overview {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Video-Platzhalter */
+.video-placeholder {
+  background-color: #ddd;
+  height: 300px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+}

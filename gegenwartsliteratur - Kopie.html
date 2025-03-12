@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gegenwartsliteratur – Roman "Draußen feiern die Leute"</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Zusätzliche Styles für die interaktiven Elemente dieser Seite -->
+  <style>
+    /* Gemeinsamer Container für Abschnitte */
+    .section-container {
+      margin-bottom: 30px;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* --- Figuren & Charakterisierung (Drag & Drop) --- */
+    .drag-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+    .draggable {
+      padding: 10px;
+      background-color: #e0e7f1;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: grab;
+      margin-bottom: 10px;
+    }
+    .dropzone {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 2px dashed #aaa;
+      border-radius: 3px;
+      min-height: 50px;
+    }
+    /* --- Word Cloud für Motive & Themen --- */
+    .word-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .word-cloud span {
+      background-color: #d1ecf1;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .word-cloud span:hover {
+      background-color: #a6dcef;
+    }
+    /* --- Dorfkarte (Identifikation mit dem "Dorf") --- */
+    .village-map {
+      position: relative;
+      background-color: #eee;
+      height: 300px;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+    .hotspot {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: rgba(42,122,226,0.7);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    /* --- Toggle für Magischer Realismus --- */
+    .toggle-container {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .toggle-button {
+      background-color: #2a7ae2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .toggle-button:hover {
+      background-color: #1e5bb8;
+    }
+    .toggle-content {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+	.section-container {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 30px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .toggle-content img {
+        max-width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+    }
+    .toggle-button {
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #251B49;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .toggle-button:hover {
+        opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gegenwartsliteratur</h1>
+    <h2>Roman "Draußen feiern die Leute"</h2>
+    <p>Teil des Projekts: Rahmenthema 5 – Literatur und Sprache von 1945 bis zur Gegenwart</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="truemmerliteratur.html">Trümmerliteratur</a></li>
+      <li><a href="gegenwartsliteratur.html">Gegenwartsliteratur</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <!-- 1. Figuren & Charakterisierung -->
+    <section class="section-container" id="figuren">
+      <h2>Figuren & Charakterisierung</h2>
+      <p>Verbinde die Figuren mit ihren charakteristischen Eigenschaften.</p>
+      <div class="drag-container">
+        <div>
+          <p><strong>Figuren:</strong></p>
+          <div class="draggable" draggable="true" id="drag-richard">Richard</div>
+          <div class="draggable" draggable="true" id="drag-timo">Timo</div>
+          <div class="draggable" draggable="true" id="drag-valerie">Valerie</div>
+          <div class="draggable" draggable="true" id="drag-jenny">Jenny</div>
+        </div>
+        <div>
+          <p><strong>Eigenschaften:</strong></p>
+          <div class="dropzone" id="drop-timo">
+             •	"Grün", pflanzenartig, körperlich "anders"<br>
+             •  Hat eine sehr dominante und alte Oma Else (157 Jahre)<br>
+             •  Muss sich an strenge Regeln im Haus halten (Männer dürfen nicht alleine essen)<br>
+             •  Protestiert gegen die Oma, indem er Nougatkissen "binst"<br>
+             •  Möchte am Ende im Dorf bleiben und Petersilie pflanzen<br>
+             •  Seine Schwester Isabel verschwindet ebenfalls<br>
+            </div>
+          <div class="dropzone" id="drop-jenny"> 
+             •	 Tochter des Polizisten Manfred<br>
+             •   Schwester der verschwundenen Flora<br>
+             •   Kehrt nach Floras Verschwinden in die Schule zurück<br>
+             •   Will anfangs nicht über Flora reden, aber dann doch<br>
+             •   Möchte Flora finden und beginnt die Suche in Hannover<br>
+             •   Unsicher nach dem Sex mit Richard<br>
+             •   Lässt sich am Ende auf den letzten "Transport" ein<br>
+            </div>
+          <div class="dropzone" id="drop-richard">
+             •    Verursacht Antriebslosigkeit bei anderen in seiner Nähe<br>
+             •    Hat Sex mit Jenny, ist aber unsicher über ihre Gefühle<br>
+             •    Verkauft Speed, um auf Partys "Energie" zu spenden<br>
+             •    Beendet Beziehung mit Jenny, um sie aus seinen Speed-Geschäften herauszuhalten<br>
+             •    Wirkt am Ende als "Schutzschild" für die 3D<br>
+            </div>
+            <div class="dropzone" id="drop-valerie">
+              •   Leidet unter einer merkwürdigen Schlafkrankheit (Dauerschlaf)<br>
+              •    Ihre Mutter ist besorgt über ihren Zustand<br>
+              •    Sucht Hilfe bei einem Wahrsager und Martha<br>
+              •    Möchte in die "Anderwelt" entfliehen<br>
+              •    Verliert ihren Vater während eines Schlafanfalls<br>
+              •    Nimmt Speed, um auf der Beerdigung wach zu bleiben<br>
+              •    Fährt am Ende mit Martha in unbekannte Richtung davon<br>
+             </div>
+        </div>
+      </div>
+      <p id="dragFeedback" style="margin-top:10px; font-weight:bold;"></p>
+    </section>
+    
+    <!-- 3. Motive & Themen -->
+    <section class="section-container" id="motive">
+      <h2>Motive & Themen</h2>
+      <p>Klicke auf ein Motiv, um mehr über seine Bedeutung zu erfahren.</p>
+      <div class="word-cloud">
+        <span onclick="showMotiveInfo('Identitätskrise und Selbstfindung')">Identitätskrise und Selbstfindung</span>
+        <span onclick="showMotiveInfo('Zugehörigkeit und Ausgrenzung')">Zugehörigkeit und Ausgrenzung</span>
+        <span onclick="showMotiveInfo('Gesellschaftlicher Druck und Anpassung')">Gesellschaftlicher Druck und Anpassung</span>
+        <span onclick="showMotiveInfo('Magischer Realismus und Surrealität')">Magischer Realismus und Surrealität</span>
+        <span onclick="showMotiveInfo('Erwachsenwerden / Identitätssuche')">Erwachsenwerden / Identitätssuche</span>
+        <span onclick="showMotiveInfo('Anderssein / Außenseitertum')">Anderssein / Außenseitertum</span>
+        <span onclick="showMotiveInfo('Flucht und Eskapismus')">Flucht und Eskapismus</span>
+        <span onclick="showMotiveInfo('Kriminalität und Unterwelt')">Kriminalität und Unterwelt</span>
+        <span onclick="showMotiveInfo('Familie und dysfunktionale Strukturen')">Familie und dysfunktionale Strukturen</span>
+        <span onclick="showMotiveInfo('Verlust und Trauer')">Verlust und Trauer</span>
+        <span onclick="showMotiveInfo('Realitätsflucht vs. Realität')">Realitätsflucht vs. Realität</span>
+        <span onclick="showMotiveInfo('Bewegung und Stillstand')">Bewegung und Stillstand</span>
+        <span onclick="showMotiveInfo('Das Dorf als Mikrokosmos')">Das Dorf als Mikrokosmos</span>
+        <span onclick="showMotiveInfo('Legenden und Mythen')">Legenden und Mythen</span>
+        <span onclick="showMotiveInfo('Humor und Surrealität')">Humor und Surrealität</span>
+        <span onclick="showMotiveInfo('Musik und Party')">Musik und Party</span>
+        <span onclick="showMotiveInfo('Verwandlung / Metamorphose')">Verwandlung / Metamorphose</span>
+      </div>
+      <p id="motiveInfo" style="margin-top:10px; font-weight:bold;"></p>
+    </section>
+    
+    
+    <!-- 4. Identifikation mit dem "Dorf" -->
+    <section class="section-container" id="dorf">
+      <h2>Identifikation mit dem "Dorf"</h2>
+      <p>Klicke auf die Hotspots der interaktiven Dorfkarte, um Konflikte und Symbole zu entdecken.</p>
+      <div class="village-map" id="villageMap">
+        <!-- Beispiel-Hotspots -->
+        <div class="hotspot" style="top: 50px; left: 100px;" onclick="showDorfInfo('Schule: Ort des Lernens und Zusammenhalts')"></div>
+        <div class="hotspot" style="top: 150px; left: 200px;" onclick="showDorfInfo('Marktplatz: Zentrum des Gemeinschaftslebens')"></div>
+        <div class="hotspot" style="top: 100px; left: 300px;" onclick="showDorfInfo('Kirche: Symbol für Tradition und Wandel')"></div>
+      </div>
+      <p id="dorfInfo" style="margin-top:10px; font-weight:bold;"></p>
+    </section>
+    
+    <!-- 5. Magischer Realismus - Junge -->
+    <section class="section-container" id="magischJunge">
+        <h2>Magischer Realismus - Junge</h2>
+        <p>Wechsle zwischen Realität und Magie beim Jungen</p>
+        <div class="toggle-container">
+            <button class="toggle-button" onclick="toggleMagie('boy')">Realität / Magie wechseln</button>
+            <div class="toggle-content" id="magieContentBoy">
+                <img id="boyImage" src='bilder/boy-original.png' alt="Junge Original">
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Magischer Realismus - Strand -->
+    <section class="section-container" id="magischStrand">
+        <h2>Magischer Realismus - Strand</h2>
+        <p>Wechsle zwischen Realität und Magie am Strand</p>
+        <div class="toggle-container">
+            <button class="toggle-button" onclick="toggleMagie('strand')">Realität / Magie wechseln</button>
+            <div class="toggle-content" id="magieContentStrand">
+                <img id="strandImage" src='bilder/strand-original.jpg' alt="Strand Original">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Definiere die Bild-Arrays global
+        const boyImages = [
+            'bilder/boy-original.png', 
+            'bilder/boy-magic-1.jpg', 
+            'bilder/boy-magic-2.jpg'
+        ];
+
+        const strandImages = [
+            'bilder/strand-original.jpg', 
+            'bilder/strand-magic-1.jpg', 
+            'bilder/strand-magic-2.jpg'
+        ];
+
+        function toggleMagie(type) {
+            // Auswahl des richtigen Bild-Arrays
+            const images = type === 'boy' ? boyImages : strandImages;
+            
+            // Element des aktuellen Bildes
+            const imageElement = document.getElementById(type + 'Image');
+            
+            // Finde den aktuellen Index im Array
+            const currentIndex = images.findIndex(img => 
+                imageElement.src.endsWith(img.split('/').pop())
+            );
+            
+            // Bestimme den nächsten Index
+            const nextIndex = (currentIndex + 1) % images.length;
+            
+            // Setze das nächste Bild
+            imageElement.src = images[nextIndex];
+            
+            // Debug-Ausgaben
+            console.log(`Typ: ${type}`);
+            console.log(`Aktueller Index: ${currentIndex}`);
+            console.log(`Nächster Index: ${nextIndex}`);
+            console.log(`Neues Bild: ${images[nextIndex]}`);
+        }
+    </script>
+<!-- 6. Entscheidungsbaum-Spiel -->
+<section class="section-container" id="entscheidungsbaum">
+  <h2>Entscheidungsbaum-Spiel: Plot von "Draußen feiern die Leute"</h2>
+  <p>Verfolge die Handlung des Romans, indem du bei jedem Schritt die richtige Entscheidung triffst. Nur eine Option führt zur tatsächlichen Handlung des Buches.</p>
+  
+  <div class="story-container">
+    <div id="story-text" class="story-text">
+      <p>Wie beginnt der Roman "Draußen feiern die Leute" von Sven Pfizemaier?</p>
+    </div>
+    
+    <div id="story-choices" class="story-choices">
+      <button onclick="makeChoice(1, 0)">Mit einer Beschreibung des Dorfes und seiner isolierten Lage</button>
+      <button onclick="makeChoice(1, 1)">Mit einer Szene auf dem jährlichen Zwiebelfest</button>
+      <button onclick="makeChoice(1, 2)">Mit Timos erster Begegnung mit Jenny</button>
+    </div>
+    
+    <div class="story-history" id="story-history">
+      <h3>Bisheriger Handlungsverlauf:</h3>
+      <ul id="history-list"></ul>
+    </div>
+    
+    <div class="story-progress">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    
+    <button id="restart-button" onclick="restartStory()" style="display: none;">Geschichte neu starten</button>
+  </div>
+</section>
+
+<style>
+  /* Styles für das Entscheidungsbaum-Spiel */
+  .story-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  
+  .story-text {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    min-height: 100px;
+    border-left: 4px solid #2a7ae2;
+  }
+  
+  .story-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .story-choices button {
+    background-color: #64B7AC;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+  }
+  
+  .story-choices button:hover {
+    background-color: #251B49;
+  }
+  
+  .story-choices button.correct {
+    background-color: #4CAF50;
+  }
+  
+  .story-choices button.incorrect {
+    background-color: #f44336;
+  }
+  
+  .story-history {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-left: 4px solid #E8060E;
+  }
+  
+  .story-history h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .story-history ul {
+    padding-left: 20px;
+  }
+  
+  .story-history li {
+    margin-bottom: 8px;
+  }
+  
+  .story-progress {
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #D12087;
+    border-radius: 5px;
+    transition: width 0.5s;
+  }
+  
+  #restart-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #restart-button:hover {
+    background-color: #d32f2f;
+  }
+</style>
+
+
+<script>
+  // Entscheidungsbaum-Spiel Logik
+  const storySteps = [
+      // SCHRITT 1
+  {
+    question: "Ausgangssituation: Der Roman beginnt. Was passiert zuerst?",
+    options: [
+      "Der Roman beginnt mit der Vorstellung einer Gruppe von 17-jährigen Teenagern in einem Dorf bei Hannover: Jenny, Timo, Richard und Valery.", // Correct Option
+      "Der Roman startet aus der Perspektive von Flora, kurz bevor sie verschwindet, und deutet mysteriöse Vorzeichen an.",
+      "Der Roman beginnt mit einer Szene auf dem Zwiebelfest, wo die Teenager zum ersten Mal aufeinandertreffen und erste Konflikte entstehen."
+    ],
+    correctOption: 0,
+    feedback: "Der Roman beginnt mit der Vorstellung einer Gruppe von 17-jährigen Teenagern in einem Dorf bei Hannover: Jenny, Timo, Richard und Valery.",
+    progress: 10
+  },
+ 
+  // SCHRITT 36
+  {
+    question: "Situation: Epilog: Weihnachten und Weiterleben. Der Roman findet ein offenes Ende mit einem Epilog. Was thematisiert dieser?",
+    options: [
+      "Der Epilog deutet an, dass Rasputin und seine Organisation weiterhin aktiv sind und dass das Verschwinden von Jugendlichen im Dorf kein Ende gefunden hat.",
+      "Der Epilog zeigt Jenny, die Jahre später ins Dorf zurückkehrt und versucht, mit ihrer Vergangenheit abzuschließen und Antworten auf Floras Verschwinden zu finden.",
+      "Ein kurzer Epilog thematisiert das Weitergehen des Lebens im Dorf, insbesondere die Vorbereitung des Weihnachtsmarktes, trotz des Verschwindens der Teenager. Das Leben geht weiter, der Einzelhandel darf nicht leiden. Der Roman endet offen." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Ein kurzer Epilog thematisiert das Weitergehen des Lebens im Dorf, insbesondere die Vorbereitung des Weihnachtsmarktes, trotz des Verschwindens der Teenager. Das Leben geht weiter, der Einzelhandel darf nicht leiden. Der Roman endet offen.",
+    progress: 10
+  }
+
+];
+
+  
+  let currentStep = 0;
+  let historyItems = [];
+  
+  function makeChoice(stepIndex, choiceIndex) {
+    const step = storySteps[stepIndex - 1];
+    const choices = document.getElementById('story-choices');
+    const buttons = choices.getElementsByTagName('button');
+    
+    // Markiere die gewählte Option
+    for (let i = 0; i < buttons.length; i++) {
+      if (i === choiceIndex) {
+        if (choiceIndex === step.correctOption) {
+          buttons[i].classList.add('correct');
+        } else {
+          buttons[i].classList.add('incorrect');
+        }
+      }
+    }
+    
+    // Wenn die Wahl falsch ist, nichts weiter tun
+    if (choiceIndex !== step.correctOption) {
+      setTimeout(() => {
+        for (let button of buttons) {
+          button.classList.remove('incorrect');
+        }
+      }, 1500);
+      return;
+    }
+    
+    // Füge die korrekte Wahl zur Historie hinzu
+    historyItems.push(`<strong>Schritt ${stepIndex}:</strong> ${step.options[step.correctOption]} - ${step.feedback}`);
+    updateHistory();
+    
+    // Aktualisiere den Fortschrittsbalken
+    document.getElementById('progress-bar').style.width = `${step.progress}%`;
+    
+    // Gehe zum nächsten Schritt oder beende das Spiel
+    currentStep++;
+    
+    if (currentStep < storySteps.length) {
+      // Zeige den nächsten Schritt an
+      setTimeout(() => {
+        const nextStep = storySteps[currentStep];
+        document.getElementById('story-text').innerHTML = `<p>${nextStep.question}</p>`;
+        
+        let choicesHTML = '';
+        nextStep.options.forEach((option, index) => {
+          choicesHTML += `<button onclick="makeChoice(${currentStep + 1}, ${index})">${option}</button>`;
+        });
+        
+        document.getElementById('story-choices').innerHTML = choicesHTML;
+      }, 1000);
+    } else {
+      // Spiel beendet
+      setTimeout(() => {
+        document.getElementById('story-text').innerHTML = `
+          <p><strong>Herzlichen Glückwunsch!</strong></p>
+          <p>Du hast die gesamte Handlung des Romans "Draußen feiern die Leute" von Sven Pfizemaier erfolgreich nachvollzogen.</p>
+          <p>Der Roman thematisiert die Suche nach Identität, das Gefühl des Andersseins in einer konformistischen Gemeinschaft und die Kraft, die in der Akzeptanz von Unterschieden liegt.</p>
+        `;
+        document.getElementById('story-choices').innerHTML = '';
+        document.getElementById('restart-button').style.display = 'block';
+      }, 1000);
+    }
+  }
+  
+  function updateHistory() {
+    const historyList = document.getElementById('history-list');
+    historyList.innerHTML = '';
+    
+    historyItems.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      historyList.appendChild(li);
+    });
+    
+    // Verstecke die Historie, wenn sie leer ist
+    document.getElementById('story-history').style.display = historyItems.length > 0 ? 'block' : 'none';
+  }
+  
+  function restartStory() {
+    currentStep = 0;
+    historyItems = [];
+    updateHistory();
+    
+    const firstStep = storySteps[0];
+    document.getElementById('story-text').innerHTML = `<p>${firstStep.question}</p>`;
+    
+    let choicesHTML = '';
+    firstStep.options.forEach((option, index) => {
+      choicesHTML += `<button onclick="makeChoice(1, ${index})">${option}</button>`;
+    });
+    
+    document.getElementById('story-choices').innerHTML = choicesHTML;
+    document.getElementById('progress-bar').style.width = '0%';
+    document.getElementById('restart-button').style.display = 'none';
+  }
+  
+  // Initialisierung des Spiels beim Laden
+  window.addEventListener('load', function() {
+    document.getElementById('story-history').style.display = 'none';
+    restartStory();
+  });
+</script>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Schulprojekt – Henning, Lasse, Timo und Lukas</p>
+  </footer>
+  
+  <script>
+    /* --- Figuren & Charakterisierung: Drag & Drop --- */
+    let draggedElement = null;
+    document.querySelectorAll('.draggable').forEach(item => {
+      item.addEventListener('dragstart', function(e) {
+        draggedElement = this;
+      });
+    });
+    document.querySelectorAll('.dropzone').forEach(zone => {
+      zone.addEventListener('dragover', function(e) {
+        e.preventDefault();
+      });
+      zone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        if(draggedElement) {
+          // Überprüfe, ob die zugewiesene ID passt
+          const dropId = this.id.split('-')[1];
+          const dragId = draggedElement.id.split('-')[1];
+          if(dropId === dragId) {
+            this.textContent = draggedElement.textContent + " – passende Zuordnung!";
+            document.getElementById('dragFeedback').textContent = "Richtig zugeordnet!";
+          } else {
+            document.getElementById('dragFeedback').textContent = "Falsche Zuordnung, versuche es nochmal.";
+          }
+        }
+      });
+    });
+    
+    /* --- Plot-Darstellung --- */
+    const plotEvents = [
+      "Das Dorf wird vorgestellt.",
+      "Timo, Jenny und Richard werden als Außenseiter charakterisiert.",
+      "Ein Konflikt rund ums Zwiebelfest entsteht.",
+      "Die Suche nach den Vermissten beginnt.",
+      "Unerwartete Wendungen führen zu einer großen Party."
+    ];
+    let currentPlotIndex = 0;
+    function showNextPlot() {
+      if (currentPlotIndex < plotEvents.length) {
+        document.getElementById('plotEvent').textContent = plotEvents[currentPlotIndex];
+        currentPlotIndex++;
+      } else {
+        document.getElementById('plotEvent').textContent = "Alle Ereignisse wurden angezeigt.";
+      }
+    }
+    
+    /* --- Motive & Themen --- */
+    function showMotiveInfo(motive) {
+  let info = "";
+  switch(motive) {
+    case "Identitätskrise und Selbstfindung":
+      info = "Die Protagonisten kämpfen mit der Frage, wer sie wirklich sind und wie sie sich in eine starr strukturierte Gesellschaft einfügen sollen. Timo, Valerie und Richard stehen für verschiedene Ansätze, ihren Platz in der Welt zu finden und sich selbst zu erkennen. Zentrale Themen des Coming-of-Age und der Selbstfindung, durchzogen von Selbstzweifeln, aber auch der Hoffnung auf Veränderung.";
+      break;
+    case "Verwandlung / Metamorphose":
+      info = "Rasputins angebliche Verwandlung in eine Eule, Timos pflanzenartiges Wesen und die 'Mutantenhaftigkeit' vieler Figuren symbolisieren die innere Verwandlung der Teenager im Prozess des Erwachsenwerdens.";
+      break;
+    default:
+      info = "Keine Informationen verfügbar.";
+  }
+  document.getElementById('motiveInfo').textContent = info;
+}
+
+    
+    /* --- Dorfkarte --- */
+    function showDorfInfo(info) {
+      document.getElementById('dorfInfo').textContent = info;
+    }
+    
+    /* --- Magischer Realismus Toggle --- */
+    let isRealitaet = true;
+let currentIndexRealitaet = 0;
+let currentIndexMagie = 0;
+
+const realitaetImages = [
+  "bilder/toskana-original.jpg",
+  "bilder/strand-original.jpg",
+  "bilder/boy-original.jpg"
+];
+
+const magieImages = [
+  "bilder/toskana-magic-1.jpg",
+  "bilder/strand-magic-1.jpg",
+  "bilder/boy-magic-1.jpg"
+];
+
+function toggleMagie() {
+  const content = document.getElementById('magieContent');
+  
+  if (isRealitaet) {
+    // Show the next magic image
+    currentIndexMagie = (currentIndexMagie + 1) % magieImages.length;
+    content.innerHTML = `<img src="${magieImages[currentIndexMagie]}" height="400px">`;
+  } else {
+    // Show the next real image
+    currentIndexRealitaet = (currentIndexRealitaet + 1) % realitaetImages.length;
+    content.innerHTML = `<img src="${realitaetImages[currentIndexRealitaet]}" height="400px">`;
+  }
+  
+  // Toggle the state for the next call
+  isRealitaet = !isRealitaet;
+}
+
+  </script>
+</body>
+</html>

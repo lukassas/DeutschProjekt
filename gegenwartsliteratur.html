@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gegenwartsliteratur – Roman "Draußen feiern die Leute"</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Zusätzliche Styles für die interaktiven Elemente dieser Seite -->
+  <style>
+    /* Gemeinsamer Container für Abschnitte */
+    .section-container {
+      margin-bottom: 30px;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* --- Figuren & Charakterisierung (Drag & Drop) --- */
+    .drag-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+    .draggable {
+      padding: 10px;
+      background-color: #e0e7f1;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: grab;
+      margin-bottom: 10px;
+    }
+    .dropzone {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 2px dashed #aaa;
+      border-radius: 3px;
+      min-height: 50px;
+    }
+    /* --- Word Cloud für Motive & Themen --- */
+    .word-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .word-cloud span {
+      background-color: #d1ecf1;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .word-cloud span:hover {
+      background-color: #a6dcef;
+    }
+    /* --- Dorfkarte (Identifikation mit dem "Dorf") --- */
+    .village-map {
+      position: relative;
+      background-color: #eee;
+      height: 300px;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+    .hotspot {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: rgba(42,122,226,0.7);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    /* --- Toggle für Magischer Realismus --- */
+    .toggle-container {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .toggle-button {
+      background-color: #2a7ae2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .toggle-button:hover {
+      background-color: #1e5bb8;
+    }
+    .toggle-content {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+	.section-container {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 30px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .toggle-content img {
+        max-width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+    }
+    .toggle-button {
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #251B49;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .toggle-button:hover {
+        opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gegenwartsliteratur</h1>
+    <h2>Roman "Draußen feiern die Leute"</h2>
+    <p>Teil des Projekts: Rahmenthema 5 – Literatur und Sprache von 1945 bis zur Gegenwart</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="truemmerliteratur.html">Trümmerliteratur</a></li>
+      <li><a href="gegenwartsliteratur.html">Gegenwartsliteratur</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <!-- 1. Figuren & Charakterisierung -->
+    <section class="section-container" id="figuren">
+      <h2>Figuren & Charakterisierung</h2>
+      <p>Verbinde die Figuren mit ihren charakteristischen Eigenschaften.</p>
+      <div class="drag-container">
+        <div>
+          <p><strong>Figuren:</strong></p>
+          <div class="draggable" draggable="true" id="drag-richard">Richard</div>
+          <div class="draggable" draggable="true" id="drag-timo">Timo</div>
+          <div class="draggable" draggable="true" id="drag-valerie">Valerie</div>
+          <div class="draggable" draggable="true" id="drag-jenny">Jenny</div>
+        </div>
+        <div>
+          <p><strong>Eigenschaften:</strong></p>
+          <div class="dropzone" id="drop-timo">
+             •	"Grün", pflanzenartig, körperlich "anders"<br>
+             •  Hat eine sehr dominante und alte Oma Else (157 Jahre)<br>
+             •  Muss sich an strenge Regeln im Haus halten (Männer dürfen nicht alleine essen)<br>
+             •  Protestiert gegen die Oma, indem er Nougatkissen "binst"<br>
+             •  Möchte am Ende im Dorf bleiben und Petersilie pflanzen<br>
+             •  Seine Schwester Isabel verschwindet ebenfalls<br>
+            </div>
+          <div class="dropzone" id="drop-jenny"> 
+             •	 Tochter des Polizisten Manfred<br>
+             •   Schwester der verschwundenen Flora<br>
+             •   Kehrt nach Floras Verschwinden in die Schule zurück<br>
+             •   Will anfangs nicht über Flora reden, aber dann doch<br>
+             •   Möchte Flora finden und beginnt die Suche in Hannover<br>
+             •   Unsicher nach dem Sex mit Richard<br>
+             •   Lässt sich am Ende auf den letzten "Transport" ein<br>
+            </div>
+          <div class="dropzone" id="drop-richard">
+             •    Verursacht Antriebslosigkeit bei anderen in seiner Nähe<br>
+             •    Hat Sex mit Jenny, ist aber unsicher über ihre Gefühle<br>
+             •    Verkauft Speed, um auf Partys "Energie" zu spenden<br>
+             •    Beendet Beziehung mit Jenny, um sie aus seinen Speed-Geschäften herauszuhalten<br>
+             •    Wirkt am Ende als "Schutzschild" für die 3D<br>
+            </div>
+            <div class="dropzone" id="drop-valerie">
+              •   Leidet unter einer merkwürdigen Schlafkrankheit (Dauerschlaf)<br>
+              •    Ihre Mutter ist besorgt über ihren Zustand<br>
+              •    Sucht Hilfe bei einem Wahrsager und Martha<br>
+              •    Möchte in die "Anderwelt" entfliehen<br>
+              •    Verliert ihren Vater während eines Schlafanfalls<br>
+              •    Nimmt Speed, um auf der Beerdigung wach zu bleiben<br>
+              •    Fährt am Ende mit Martha in unbekannte Richtung davon<br>
+             </div>
+        </div>
+      </div>
+      <p id="dragFeedback" style="margin-top:10px; font-weight:bold;"></p>
+    </section>
+    
+    <!-- 3. Motive & Themen -->
+    <section class="section-container" id="motive">
+      <h2>Motive & Themen</h2>
+      <p>Klicke auf ein Motiv, um mehr über seine Bedeutung zu erfahren.</p>
+      <div class="word-cloud">
+        <span onclick="showMotiveInfo('Identitätskrise und Selbstfindung')">Identitätskrise und Selbstfindung</span>
+        <span onclick="showMotiveInfo('Zugehörigkeit und Ausgrenzung')">Zugehörigkeit und Ausgrenzung</span>
+        <span onclick="showMotiveInfo('Gesellschaftlicher Druck und Anpassung')">Gesellschaftlicher Druck und Anpassung</span>
+        <span onclick="showMotiveInfo('Magischer Realismus und Surrealität')">Magischer Realismus und Surrealität</span>
+        <span onclick="showMotiveInfo('Erwachsenwerden / Identitätssuche')">Erwachsenwerden / Identitätssuche</span>
+        <span onclick="showMotiveInfo('Anderssein / Außenseitertum')">Anderssein / Außenseitertum</span>
+        <span onclick="showMotiveInfo('Flucht und Eskapismus')">Flucht und Eskapismus</span>
+        <span onclick="showMotiveInfo('Kriminalität und Unterwelt')">Kriminalität und Unterwelt</span>
+        <span onclick="showMotiveInfo('Familie und dysfunktionale Strukturen')">Familie und dysfunktionale Strukturen</span>
+        <span onclick="showMotiveInfo('Verlust und Trauer')">Verlust und Trauer</span>
+        <span onclick="showMotiveInfo('Realitätsflucht vs. Realität')">Realitätsflucht vs. Realität</span>
+        <span onclick="showMotiveInfo('Bewegung und Stillstand')">Bewegung und Stillstand</span>
+        <span onclick="showMotiveInfo('Das Dorf als Mikrokosmos')">Das Dorf als Mikrokosmos</span>
+        <span onclick="showMotiveInfo('Legenden und Mythen')">Legenden und Mythen</span>
+        <span onclick="showMotiveInfo('Humor und Surrealität')">Humor und Surrealität</span>
+        <span onclick="showMotiveInfo('Musik und Party')">Musik und Party</span>
+        <span onclick="showMotiveInfo('Verwandlung / Metamorphose')">Verwandlung / Metamorphose</span>
+      </div>
+      <p id="motiveInfo" style="margin-top:10px; font-weight:bold;"></p>
+    </section>
+    
+    
+    <!-- 4. Identifikation mit dem "Dorf" -->
+    <section class="section-container" id="dorf">
+      <h2>Identifikation mit dem "Dorf"</h2>
+      <p>Klicke auf die Hotspots der interaktiven Dorfkarte, um Konflikte und Symbole zu entdecken.</p>
+      <div class="village-map" id="villageMap" style="background-image: url('bilder/dorf.png'); background-size: cover; background-position: center;">
+        <!-- Beispiel-Hotspots -->
+        <div class="hotspot" style="top: 50px; left: 100px;" onclick="showDorfInfo('Schule: Ort des Lernens und Zusammenhalts')"></div>
+        <div class="hotspot" style="top: 150px; left: 200px;" onclick="showDorfInfo('Marktplatz: Zentrum des Gemeinschaftslebens')"></div>
+        <div class="hotspot" style="top: 100px; left: 300px;" onclick="showDorfInfo('Kirche: Symbol für Tradition und Wandel')"></div>
+      </div>
+      <p id="dorfInfo" style="margin-top:10px; font-weight:bold;"></p>
+    </section>
+    
+    <!-- 5. Magischer Realismus - Junge -->
+    <section class="section-container" id="magischJunge">
+        <h2>Magischer Realismus - Junge</h2>
+        <p>Wechsle zwischen Realität und Magie beim Jungen</p>
+        <div class="toggle-container">
+            <button class="toggle-button" onclick="toggleMagie('boy')">Realität / Magie wechseln</button>
+            <div class="toggle-content" id="magieContentBoy">
+                <img id="boyImage" src='bilder/boy-original.png' alt="Junge Original">
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Magischer Realismus - Strand -->
+    <section class="section-container" id="magischStrand">
+        <h2>Magischer Realismus - Strand</h2>
+        <p>Wechsle zwischen Realität und Magie am Strand</p>
+        <div class="toggle-container">
+            <button class="toggle-button" onclick="toggleMagie('strand')">Realität / Magie wechseln</button>
+            <div class="toggle-content" id="magieContentStrand">
+                <img id="strandImage" src='bilder/strand-original.jpg' alt="Strand Original">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Definiere die Bild-Arrays global
+        const boyImages = [
+            'bilder/boy-original.png', 
+            'bilder/boy-magic-1.jpg', 
+            'bilder/boy-magic-2.jpg'
+        ];
+
+        const strandImages = [
+            'bilder/strand-original.jpg', 
+            'bilder/strand-magic-1.jpg', 
+            'bilder/strand-magic-2.jpg'
+        ];
+
+        function toggleMagie(type) {
+            // Auswahl des richtigen Bild-Arrays
+            const images = type === 'boy' ? boyImages : strandImages;
+            
+            // Element des aktuellen Bildes
+            const imageElement = document.getElementById(type + 'Image');
+            
+            // Finde den aktuellen Index im Array
+            const currentIndex = images.findIndex(img => 
+                imageElement.src.endsWith(img.split('/').pop())
+            );
+            
+            // Bestimme den nächsten Index
+            const nextIndex = (currentIndex + 1) % images.length;
+            
+            // Setze das nächste Bild
+            imageElement.src = images[nextIndex];
+            
+            // Debug-Ausgaben
+            console.log(`Typ: ${type}`);
+            console.log(`Aktueller Index: ${currentIndex}`);
+            console.log(`Nächster Index: ${nextIndex}`);
+            console.log(`Neues Bild: ${images[nextIndex]}`);
+        }
+    </script>
+<!-- 6. Entscheidungsbaum-Spiel -->
+<section class="section-container" id="entscheidungsbaum">
+  <h2>Entscheidungsbaum-Spiel: Plot von "Draußen feiern die Leute"</h2>
+  <p>Verfolge die Handlung des Romans, indem du bei jedem Schritt die richtige Entscheidung triffst. Nur eine Option führt zur tatsächlichen Handlung des Buches.</p>
+  
+  <div class="story-container">
+    <div id="story-text" class="story-text">
+      <p>Wie beginnt der Roman "Draußen feiern die Leute" von Sven Pfizemaier?</p>
+    </div>
+    
+    <div id="story-choices" class="story-choices">
+      <button onclick="makeChoice(1, 0)">Mit einer Beschreibung des Dorfes und seiner isolierten Lage</button>
+      <button onclick="makeChoice(1, 1)">Mit einer Szene auf dem jährlichen Zwiebelfest</button>
+      <button onclick="makeChoice(1, 2)">Mit Timos erster Begegnung mit Jenny</button>
+    </div>
+    
+    <div class="story-history" id="story-history">
+      <h3>Bisheriger Handlungsverlauf:</h3>
+      <ul id="history-list"></ul>
+    </div>
+    
+    <div class="story-progress">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    
+    <button id="restart-button" onclick="restartStory()" style="display: none;">Geschichte neu starten</button>
+  </div>
+</section>
+
+<style>
+  /* Styles für das Entscheidungsbaum-Spiel */
+  .story-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  
+  .story-text {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    min-height: 100px;
+    border-left: 4px solid #2a7ae2;
+  }
+  
+  .story-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .story-choices button {
+    background-color: #64B7AC;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+  }
+  
+  .story-choices button:hover {
+    background-color: #251B49;
+  }
+  
+  .story-choices button.correct {
+    background-color: #4CAF50;
+  }
+  
+  .story-choices button.incorrect {
+    background-color: #f44336;
+  }
+  
+  .story-history {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-left: 4px solid #E8060E;
+  }
+  
+  .story-history h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .story-history ul {
+    padding-left: 20px;
+  }
+  
+  .story-history li {
+    margin-bottom: 8px;
+  }
+  
+  .story-progress {
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #D12087;
+    border-radius: 5px;
+    transition: width 0.5s;
+  }
+  
+  #restart-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #restart-button:hover {
+    background-color: #d32f2f;
+  }
+</style>
+
+
+<script>
+  // Entscheidungsbaum-Spiel Logik
+  const storySteps = [
+      // SCHRITT 1
+  {
+    question: "Ausgangssituation: Der Roman beginnt. Was passiert zuerst?",
+    options: [
+      "Der Roman beginnt mit der Vorstellung einer Gruppe von 17-jährigen Teenagern in einem Dorf bei Hannover: Jenny, Timo, Richard und Valery.", // Correct Option
+      "Der Roman startet aus der Perspektive von Flora, kurz bevor sie verschwindet, und deutet mysteriöse Vorzeichen an.",
+      "Der Roman beginnt mit einer Szene auf dem Zwiebelfest, wo die Teenager zum ersten Mal aufeinandertreffen und erste Konflikte entstehen."
+    ],
+    correctOption: 0,
+    feedback: "Der Roman beginnt mit der Vorstellung einer Gruppe von 17-jährigen Teenagern in einem Dorf bei Hannover: Jenny, Timo, Richard und Valery.",
+    progress: 10
+  },
+  // SCHRITT 2
+  {
+    question: "Situation: Jennys Schwester Flora ist verschwunden. Wie wird dies im Roman thematisiert?",
+    options: [
+      "Flora hat eine Nachricht hinterlassen, die auf einen Streit mit der Familie und einen geplanten Ausbruch hindeutet.",
+      "Jennys ältere Schwester Flora ist vor einigen Wochen verschwunden, was Jenny und die Familie belastet.", // Correct Option
+      "Flora ist erst seit kurzem verschwunden, und Jenny macht sich sofort auf die Suche nach ihr."
+    ],
+    correctOption: 1,
+    feedback: "Jennys ältere Schwester Flora ist vor einigen Wochen verschwunden, was Jenny und die Familie belastet.",
+    progress: 10
+  },
+  // SCHRITT 3
+  {
+    question: "Situation: Neben Floras Verschwinden gibt es weitere beunruhigende Zeichen im Dorf. Welche?",
+    options: [
+      "Im Dorf häufen sich unheimliche Vorkommnisse, und die Teenager spüren eine unheimliche Präsenz.",
+      "Im Dorf kursieren Gerüchte über eine mysteriöse Krankheit, die die Jugend befällt und zu Antriebslosigkeit führt.",
+      "Es wird angedeutet, dass im Dorf junge Leute verschwinden, und Valerys Schlafkrankheit wird als besorgniserregend dargestellt." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Es wird angedeutet, dass im Dorf junge Leute verschwinden, und Valerys Schlafkrankheit wird als besorgniserregend dargestellt.",
+    progress: 10
+  },
+  // SCHRITT 4
+  {
+    question: "Situation: Das jährliche Zwiebelfest rückt näher. Welche Rolle spielt es in der Geschichte?",
+    options: [
+      "Das Zwiebelfest im Dorf wird erwähnt und dient als Hintergrund für die kommenden Ereignisse und Eskalationen.", // Correct Option
+      "Das Zwiebelfest wird als letztes großes Fest vor einer drohenden Katastrophe angekündigt.",
+      "Das Zwiebelfest wird abgesagt, was die Dorfbewohner frustriert und zu Spannungen führt."
+    ],
+    correctOption: 0,
+    feedback: "Das Zwiebelfest im Dorf wird erwähnt und dient als Hintergrund für die kommenden Ereignisse und Eskalationen.",
+    progress: 10
+  },
+  // SCHRITT 5
+  {
+    question: "Situation: Jenny sucht nach Hinweisen zu Floras Verschwinden. Was entdeckt sie?",
+    options: [
+      "Jenny findet ein mysteriöses Amulett in Floras Zimmer, das eine unheimliche Ausstrahlung hat.",
+      "Jenny findet einen versteckten Brief von Flora, in dem diese um Hilfe bittet und Andeutungen über eine Gefahr im Dorf macht.",
+      "Jenny findet in Floras Zimmer einen Schuhkarton mit Notizen. Sie beginnt, diese zu lesen und findet Hinweise auf Floras Unzufriedenheit und einen mysteriösen \"Rasputin\"." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Jenny findet in Floras Zimmer einen Schuhkarton mit Notizen. Sie beginnt, diese zu lesen und findet Hinweise auf Floras Unzufriedenheit und einen mysteriösen \"Rasputin\".",
+    progress: 10
+  },
+  // SCHRITT 6
+  {
+    question: "Situation: Jennys Vater Manfred, der Polizist ist, reagiert auf Floras Verschwinden und Jennys Suche. Wie?",
+    options: [
+      "Manfred bittet Jenny um Hilfe bei der Suche, da er als Polizist in seinen Ermittlungen nicht weiterkommt und auf Jennys Intuition hofft.",
+      "Manfred verbietet Jenny, weiter nach Flora zu suchen, da er „die Ermittlungen der Polizei nicht gefährden will“.",
+      "Jennys Vater, Polizist Manfred, reagiert gestresst auf Floras Verschwinden und räumt Floras Zimmer aus, was zu Spannungen mit Jenny führt." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Jennys Vater, Polizist Manfred, reagiert gestresst auf Floras Verschwinden und räumt Floras Zimmer aus, was zu Spannungen mit Jenny führt.",
+    progress: 10
+  },
+  // SCHRITT 7
+  {
+    question: "Situation: Timo lebt unter ungewöhnlichen familiären Regeln. Welche sind das und wie reagiert er?",
+    options: [
+      "Bei Timo zu Hause gibt es bizarre Regeln, die von seiner Großmutter Else aufgestellt wurden, insbesondere die Regel, dass Männer nicht alleine essen dürfen. Timo rebelliert dagegen.", // Correct Option
+      "Timos Familie hat eine lange Tradition von abergläubischen Bräuchen, die Timo lächerlich findet, aber respektieren muss.",
+      "Timos Familie befolgt strenge religiöse Regeln, die Timo zunehmend einengen und von seinen Freunden isolieren."
+    ],
+    correctOption: 0,
+    feedback: "Bei Timo zu Hause gibt es bizarre Regeln, die von seiner Großmutter Else aufgestellt wurden, insbesondere die Regel, dass Männer nicht alleine essen dürfen. Timo rebelliert dagegen.",
+    progress: 10
+  },
+  // SCHRITT 8
+  {
+    question: "Situation: Der Dorfdrogendealer Schmauser verbreitet Gerüchte. Über wen und was?",
+    options: [
+      "Schmauser, der Dorfdrogendealer, verbreitet Gerüchte über Rasputin und dessen Verbindung zu Area 51 und dem Verschwinden von Leuten.", // Correct Option
+      "Schmauser erzählt von einer alten Legende des Dorfes über ein mysteriöses Wesen, das in den Wäldern lebt und junge Menschen in seinen Bann zieht.",
+      "Schmauser behauptet, dass Flora freiwillig mit einer Gruppe von Aussteigern weggegangen ist und in einer Kommune lebt."
+    ],
+    correctOption: 0,
+    feedback: "Schmauser, der Dorfdrogendealer, verbreitet Gerüchte über Rasputin und dessen Verbindung zu Area 51 und dem Verschwinden von Leuten.",
+    progress: 10
+  },
+  // SCHRITT 9
+  {
+    question: "Situation: Floras Aufzeichnungen geben weitere Einblicke. Was enthüllen sie?",
+    options: [
+      "Eine kursiv gedruckte Aufzeichnung von Flora deutet darauf hin, dass sie mit Martha in Hannover war und unglücklich im Dorf ist. Sie erwähnt den Wunsch, mit Rasputin zu sprechen.", // Correct Option
+      "Flora beschreibt in ihren Notizen beängstigende Träume und Visionen, die sie mit Hannover und einer unheilvollen Begegnung in Verbindung bringt.",
+      "Floras Notizen enthalten kryptische Hinweise auf einen geheimen Treffpunkt in Hannover und eine Person namens \"M\"."
+    ],
+    correctOption: 0,
+    feedback: "Eine kursiv gedruckte Aufzeichnung von Flora deutet darauf hin, dass sie mit Martha in Hannover war und unglücklich im Dorf ist. Sie erwähnt den Wunsch, mit Rasputin zu sprechen.",
+    progress: 10
+  },
+  // SCHRITT 10
+  {
+    question: "Situation: Jenny und Richard nähern sich an. Was passiert zwischen ihnen?",
+    options: [
+      "Jenny und Richard geraten in einen Streit, als Richard Jennys Suche nach Flora als \"übertrieben\" abtut und ihr vorwirft, das Zwiebelfest zu verderben.",
+      "Jenny und Richard verbringen einen romantischen Abend auf dem Zwiebelfest, aber Jenny bleibt emotional distanziert und unnahbar.",
+      "Jenny und Richard schlafen miteinander. Jenny ist danach unsicher, ob sie das wirklich wollte, aber Richard findet es \"chillig\". Sie sprechen kurz über Drogen und Rasputin." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Jenny und Richard schlafen miteinander. Jenny ist danach unsicher, ob sie das wirklich wollte, aber Richard findet es \"chillig\". Sie sprechen kurz über Drogen und Rasputin.",
+    progress: 10
+  },
+  // SCHRITT 11
+  {
+    question: "Situation: Zwiebelfest-Eskalation. Wie äußert sich das?",
+    options: [
+      "Das Zwiebelfest erreicht seinen Höhepunkt mit starkem Alkoholkonsum und hochkochenden Emotionen.", // Correct Option
+      "Ein plötzliches Unwetter zieht über das Zwiebelfest und sorgt für Chaos und Panik unter den Besuchern.",
+      "Auf dem Zwiebelfest kommt es zu einer öffentlichen Auseinandersetzung zwischen verschiedenen Dorffamilien, die alte Konflikte neu entfacht."
+    ],
+    correctOption: 0,
+    feedback: "Das Zwiebelfest erreicht seinen Höhepunkt mit starkem Alkoholkonsum und hochkochenden Emotionen.",
+    progress: 10
+  },
+  // SCHRITT 12
+  {
+    question: "Situation: Diebstahl der 3D. Was tun sie auf dem Zwiebelfest?",
+    options: [
+      "Dima, Danik und Dr. Dobrin (die 3D) stehlen Plastikbecher auf dem Zwiebelfest.", // Correct Option
+      "Die 3D planen, den Getränkestand des Zwiebelfestes auszurauben, um an Bargeld zu gelangen.",
+      "Die 3D versuchen, betrunkenen Festbesuchern Wertsachen zu entwenden, werden aber fast erwischt."
+    ],
+    correctOption: 0,
+    feedback: "Dima, Danik und Dr. Dobrin (die 3D) stehlen Plastikbecher auf dem Zwiebelfest.",
+    progress: 10
+  },
+  // SCHRITT 13
+  {
+    question: "Situation: Manfreds Auftrag an die 3D. Was will er von ihnen?",
+    options: [
+      "Manfred verhaftet die 3D auf dem Zwiebelfest, bietet ihnen aber an, die Strafe zu mildern, wenn sie als Informanten für ihn arbeiten.",
+      "Manfred bietet den 3D einen Deal an: Wenn sie ihm helfen, die verschwundenen Jugendlichen zu finden, wird er ihre kriminellen Aktivitäten ignorieren.",
+      "Jennys Vater Manfred, inkognito auf dem Zwiebelfest, ertappt die 3D und erpresst sie. Er beauftragt sie, Jenny zu beobachten und ihm Informationen zu liefern, im Gegenzug lässt er sie weiterhin Gras verkaufen." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Jennys Vater Manfred, inkognito auf dem Zwiebelfest, ertappt die 3D und erpresst sie. Er beauftragt sie, Jenny zu beobachten und ihm Informationen zu liefern, im Gegenzug lässt er sie weiterhin Gras verkaufen.",
+    progress: 10
+  },
+  // SCHRITT 14
+  {
+    question: "Situation: Die 3D reagieren auf Manfreds Auftrag. Wie verändern sie ihre Aktivitäten?",
+    options: [
+      "Die 3D beschließen, Manfreds Angebot anzunehmen und professioneller in den Drogenhandel einzusteigen, um nicht mehr klauen zu müssen.", // Correct Option
+      "Die 3D beschließen, Manfred zu täuschen und ihm falsche Informationen über Jenny zu liefern, während sie ihre eigenen kriminellen Geschäfte weiterführen.",
+      "Die 3D lehnen Manfreds Angebot zunächst ab, da sie befürchten, als \"Verräter\" im Dorf dazustehen."
+    ],
+    correctOption: 0,
+    feedback: "Die 3D beschließen, Manfreds Angebot anzunehmen und professioneller in den Drogenhandel einzusteigen, um nicht mehr klauen zu müssen.",
+    progress: 10
+  },
+  // SCHRITT 15
+  {
+    question: "Situation: Informationen über Rasputin. Wo finden sie Hinweise?",
+    options: [
+      "Richard, der Kontakte zu älteren Jugendlichen im Dorf hat, hört Gerüchte über Rasputin und dessen dubiose Geschäfte.",
+      "Jenny findet in Floras Notizen eine Telefonnummer, die zu Martha führt, einer Kontaktperson von Rasputin.",
+      "In der Dorfkneipe \"Zum Strick\" tauschen Jenny, Valery, Timo und Richard Informationen aus. Schmauser erwähnt, dass Rasputin mit den verschwundenen Leuten zu tun haben soll. Jenny erinnert sich, dass Flora Rasputin in ihren Notizen erwähnte." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "In der Dorfkneipe \"Zum Strick\" tauschen Jenny, Valery, Timo und Richard Informationen aus. Schmauser erwähnt, dass Rasputin mit den verschwundenen Leuten zu tun haben soll. Jenny erinnert sich, dass Flora Rasputin in ihren Notizen erwähnte.",
+    progress: 10
+  },
+  // SCHRITT 16
+  {
+    question: "Situation: Jenny zieht Schlüsse aus den Informationen. Was beschließt sie zu tun?",
+    options: [
+      "Jenny beschließt, nach Hannover zu fahren, um nach Flora und Rasputin zu suchen.", // Correct Option
+      "Jenny beschließt, zunächst im Dorf zu bleiben und weitere Nachforschungen anzustellen, bevor sie nach Hannover fährt.",
+      "Jenny beschließt, Martha in Hannover zu kontaktieren, in der Hoffnung, dass diese ihr Informationen über Flora geben kann."
+    ],
+    correctOption: 0,
+    feedback: "Jenny beschließt, nach Hannover zu fahren, um nach Flora und Rasputin zu suchen.",
+    progress: 10
+  },
+  // SCHRITT 17
+  {
+    question: "Situation: Timos Strafe. Timo bricht gegen die Regeln seiner Oma. Wie wird er bestraft?",
+    options: [
+      "Oma Else belegt Timo mit einem Fluch, der ihm Unglück bringen soll, weil er gegen ihre Regeln verstoßen hat.",
+      "Timo wird von seiner Oma Else in seinem Zimmer eingesperrt, um ihn für seinen Ungehorsam zu bestrafen.",
+      "Timo wird von seiner Oma Else erwischt, wie er alleine isst und wird hart bestraft. Seine Schwester Isabel reagiert hilflos." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Timo wird von seiner Oma Else erwischt, wie er alleine isst und wird hart bestraft. Seine Schwester Isabel reagiert hilflos.",
+    progress: 10
+  },
+  // SCHRITT 18
+  {
+    question: "Situation: Isabels Verschwinden. Nach Timos Bestrafung verschwindet auch seine Schwester Isabel. Was deutet ihr Verschwinden an?",
+    options: [
+      "Timos Schwester Isabel verschwindet plötzlich, offenbar freiwillig.", // Correct Option
+      "Isabel wird von Oma Else weggeschickt, um \"Buße\" für Timos Verhalten zu tun.",
+      "Isabel flieht aus dem Haus, um Timo vor Oma Else zu schützen und ihn von den strengen Regeln zu befreien."
+    ],
+    correctOption: 0,
+    feedback: "Timos Schwester Isabel verschwindet plötzlich, offenbar freiwillig.",
+    progress: 10
+  },
+  // SCHRITT 19
+  {
+    question: "Situation: Richards Speed-Idee. Richard hat eine neue Geschäftsidee für die 3D. Welche?",
+    options: [
+      "Richard schlägt den 3D vor, Speed zu verkaufen und eine \"Marktlücke\" auf seiner Party zu nutzen.", // Correct Option
+      "Richard plant, die 3D für den Diebstahl von Alkohol auf seiner Party einzusetzen, um Kosten zu sparen.",
+      "Richard will die 3D dazu bringen, für ihn als Geldeintreiber zu arbeiten und seine Partygäste zur Kasse zu bitten."
+    ],
+    correctOption: 0,
+    feedback: "Richard schlägt den 3D vor, Speed zu verkaufen und eine \"Marktlücke\" auf seiner Party zu nutzen.",
+    progress: 10
+  },
+  // SCHRITT 20
+  {
+    question: "Situation: Valerys Wahrsagerbesuch. Valerys Mutter sucht Hilfe für Valerys Schlafkrankheit. Wo suchen sie diese?",
+    options: [
+      "Valerys Mutter sucht Rat bei einer traditionellen Heilerin im Dorf, die Valery mit Kräutern und Beschwörungen behandeln will.",
+      "Valerys Mutter bringt sie zu einem Arzt in Wolfsburg, der jedoch ratlos ist und keine organische Ursache für die Schlafkrankheit findet.",
+      "Valery wird von ihrer Mutter zu einem Wahrsager in Wolfsburg geschleppt, um ihr Schlafproblem zu lösen. Der Wahrsager kann ihr nicht helfen, verweist sie aber an Martha." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Valery wird von ihrer Mutter zu einem Wahrsager in Wolfsburg geschleppt, um ihr Schlafproblem zu lösen. Der Wahrsager kann ihr nicht helfen, verweist sie aber an Martha.",
+    progress: 10
+  },
+  // SCHRITT 21
+  {
+    question: "Situation: Valery kontaktiert Martha. Valery folgt dem Rat des Wahrsagers. Wen kontaktiert sie?",
+    options: [
+      "Valery ruft Martha an.", // Correct Option
+      "Valery findet Martha auf einer Online-Plattform für spirituelle Lebensberatung und chattet mit ihr.",
+      "Valery schreibt Martha eine E-Mail, in der sie um Hilfe und Rat bittet."
+    ],
+    correctOption: 0,
+    feedback: "Valery ruft Martha an.",
+    progress: 10
+  },
+  // SCHRITT 22
+  {
+    question: "Situation: Die 3D als Dorfdealer. Die 3D entwickeln sich weiter im Drogenhandel. Was planen sie als Nächstes?",
+    options: [
+      "Die 3D werden zu professionellen Dorfdealern und beschließen, Gras in Hannover zu besorgen, aber für Speed müssen sie zu Rasputin persönlich.", // Correct Option
+      "Die 3D denken darüber nach, aus dem Drogengeschäft auszusteigen, da es ihnen zu gefährlich wird und sie sich von Manfred bedroht fühlen.",
+      "Die 3D planen, ihr Drogengeschäft auf das benachbarte Dorf auszudehnen und dort neue Kunden zu gewinnen."
+    ],
+    correctOption: 0,
+    feedback: "Die 3D werden zu professionellen Dorfdealern und beschließen, Gras in Hannover zu besorgen, aber für Speed müssen sie zu Rasputin persönlich.",
+    progress: 10
+  },
+  // SCHRITT 23
+  {
+    question: "Situation: Dr. Dobrin trifft Rasputin. Um an Speed zu gelangen, muss Dr. Dobrin ein gefährliches Treffen eingehen. Mit wem?",
+    options: [
+      "Dr. Dobrin muss unter gefährlichen Bedingungen Rasputin treffen, um Speed zu beschaffen. Rasputin, der sich als Eule bezeichnet, redet hypnotisch und philosophisch und bietet Speed und \"eine andere Welt\" an.", // Correct Option
+      "Dr. Dobrin muss in einen verlassenen Lagerhalle am Stadtrand von Hannover gehen, um dort von einem unbekannten Mittelsmann das Speed zu übernehmen.",
+      "Dr. Dobrin trifft sich heimlich mit Martha in Hannover, die ihm Speed besorgen soll, aber er traut ihr nicht ganz."
+    ],
+    correctOption: 0,
+    feedback: "Dr. Dobrin muss unter gefährlichen Bedingungen Rasputin treffen, um Speed zu beschaffen. Rasputin, der sich als Eule bezeichnet, redet hypnotisch und philosophisch und bietet Speed und \"eine andere Welt\" an.",
+    progress: 10
+  },
+  // SCHRITT 24
+  {
+    question: "Situation: Martha erzählt von der \"Anderwelt\". Martha erklärt Valery das Konzept von Rasputins \"Anderwelt\". Wie beschreibt sie diesen Ort?",
+    options: [
+      "Martha zeigt Valery Fotos von einer paradiesischen Insel in Südengland, wo Rasputin angeblich ein luxuriöses Retreat für Aussteiger betreibt.",
+      "Martha schickt Valery eine Audio-Nachricht, in der sie von einer spirituellen Gemeinschaft in den Bergen schwärmt, wo man inneren Frieden finden kann.",
+      "Martha trifft sich mit Valerie und erzählt ihr von der \"Anderwelt\" Rasputins, einem Ort der Bewegung und Sicherheit." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Martha trifft sich mit Valerie und erzählt ihr von der \"Anderwelt\" Rasputins, einem Ort der Bewegung und Sicherheit.",
+    progress: 10
+  },
+  // SCHRITT 25
+  {
+    question: "Situation: Richards Speed-Party. Richards Party eskaliert. Warum gerät sie außer Kontrolle?",
+    options: [
+      "Richard veranstaltet eine Party und mischt Speed in die Bowle, ohne die meisten Gäste zu informieren. Die Party eskaliert.", // Correct Option
+      "Richards Party gerät aus den Fugen, weil Richard selbst unter dem Einfluss von Drogen die Kontrolle verliert und die Situation eskaliert.",
+      "Auf Richards Party tauchen unerwartet rivalisierende Drogendealer auf, die für Chaos und Gewalt sorgen."
+    ],
+    correctOption: 0,
+    feedback: "Richard veranstaltet eine Party und mischt Speed in die Bowle, ohne die meisten Gäste zu informieren. Die Party eskaliert.",
+    progress: 10
+  },
+  // SCHRITT 26
+  {
+    question: "Situation: Marthas Leere und Rasputins Aufklärung. Martha ist unzufrieden und kontaktiert Rasputin. Was erfährt sie von ihm?",
+    options: [
+      "Martha fühlt sich leer und sinnlos und ruft Rasputin an, um in die \"Anderwelt\" zu gehen. Rasputin klärt sie darüber auf, dass es keine \"Anderwelt\" gibt, sondern Chillmark, eine unterirdische Grasplantage in England, wo Menschen zur Zwangsarbeit geschickt werden.", // Correct Option
+      "Martha fragt Rasputin nach dem spirituellen Sinn der \"Anderwelt\", aber Rasputin reagiert ausweichend und betont nur die materiellen Vorteile des Grasplantagen-Projekts.",
+      "Martha beichtet Rasputin ihre Zweifel an seinem \"Anderwelt\"-Konzept, woraufhin Rasputin sie bedroht und unter Druck setzt, weiterhin Kandidaten für Chillmark zu rekrutieren."
+    ],
+    correctOption: 0,
+    feedback: "Martha fühlt sich leer und sinnlos und ruft Rasputin an, um in die \"Anderwelt\" zu gehen. Rasputin klärt sie darüber auf, dass es keine \"Anderwelt\" gibt, sondern Chillmark, eine unterirdische Grasplantage in England, wo Menschen zur Zwangsarbeit geschickt werden.",
+    progress: 10
+  },
+  // SCHRITT 27
+  {
+    question: "Situation: Valery will mit Martha gehen. Valery trifft eine folgenschwere Entscheidung. Welche?",
+    options: [
+      "Valery entscheidet sich im letzten Moment gegen die \"Anderwelt\", warnt aber Jenny vor Martha und Rasputin.",
+      "Valery beschließt, gemeinsam mit Martha nach Flora zu suchen, da sie glaubt, dass Martha mehr über Floras Verbleib weiß.",
+      "Valery kontaktiert Martha und will in die \"Anderwelt\" bzw. nach Chillmark mitkommen. Sie verschwindet Wochenlang und schläft lange." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Valery kontaktiert Martha und will in die \"Anderwelt\" bzw. nach Chillmark mitkommen. Sie verschwindet Wochenlang und schläft lange.",
+    progress: 10
+  },
+  // SCHRITT 28
+  {
+    question: "Situation: Richards Speed-Handel. Richard vertieft sich in den Drogenhandel. Was sind die Konsequenzen?",
+    options: [
+      "Richards Speed-Handel gerät ins Visier der Polizei, und er muss um seine Freiheit fürchten.",
+      "Richard wird abhängig von Speed und verliert zunehmend die Kontrolle über sein Leben und seine Geschäfte.",
+      "Richard verkauft Speed im Dorf und beendet seine Beziehung mit Jenny, um sie nicht in die Drogengeschäfte hineinzuziehen." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Richard verkauft Speed im Dorf und beendet seine Beziehung mit Jenny, um sie nicht in die Drogengeschäfte hineinzuziehen.",
+    progress: 10
+  },
+  // SCHRITT 29
+  {
+    question: "Situation: Valerys Vater stirbt. Während Valerys langem Schlaf geschieht ein tragisches Ereignis. Welches?",
+    options: [
+      "Valerys Vater stirbt, während sie schläft. Sie wacht zur Beerdigung auf und nimmt Speed, um nicht einzuschlafen.", // Correct Option
+      "Valerys Haus brennt während ihres Schlafes nieder, und sie verliert all ihren Besitz.",
+      "Valerys Mutter erleidet einen schweren Nervenzusammenbruch aufgrund von Valerys Zustand und der allgemeinen Situation im Dorf."
+    ],
+    correctOption: 0,
+    feedback: "Valerys Vater stirbt, während sie schläft. Sie wacht zur Beerdigung auf und nimmt Speed, um nicht einzuschlafen.",
+    progress: 10
+  },
+  // SCHRITT 30
+  {
+    question: "Situation: Rasputins \"letzter Transport\". Rasputin plant eine finale Aktion. Welche?",
+    options: [
+      "Rasputin inszeniert seinen eigenen Tod, um unterzutauchen und seinen illegalen Geschäften im Untergrund weiter nachzugehen.",
+      "Rasputin plant, seine gesamte Operation nach Chillmark zu verlegen und das Dorf endgültig zu verlassen.",
+      "Rasputin überzeugt Martha, einen letzten großen Transport nach Chillmark zu organisieren." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Rasputin überzeugt Martha, einen letzten großen Transport nach Chillmark zu organisieren.",
+    progress: 10
+  },
+  // SCHRITT 31
+  {
+    question: "Situation: Rasputins Rede und Razia. Rasputins Plan kulminiert. Was passiert bei der \"Infoveranstaltung\"?",
+    options: [
+      "Auf einer Infoveranstaltung für den \"Transport\" hält Rasputin eine sektenartige Rede. Die Polizei stürmt die Veranstaltung (Razia). Rasputin, Jenny und Dr. Dobrin können fliehen.", // Correct Option
+      "Die \"Infoveranstaltung\" wird von Dorfbewohnern gestürmt, die Rasputin zur Rede stellen und die Wahrheit über die verschwundenen Jugendlichen erfahren wollen.",
+      "Auf der \"Infoveranstaltung\" kommt es zu einer Konfrontation zwischen Rasputin und einer rivalisierenden kriminellen Organisation."
+    ],
+    correctOption: 0,
+    feedback: "Auf einer Infoveranstaltung für den \"Transport\" hält Rasputin eine sektenartige Rede. Die Polizei stürmt die Veranstaltung (Razia). Rasputin, Jenny und Dr. Dobrin können fliehen.",
+    progress: 10
+  },
+  // SCHRITT 32
+  {
+    question: "Situation: Omas Tod und Petersilie. Timos Oma Else stirbt. Welche Auswirkungen hat das auf Timo?",
+    options: [
+      "Timos Oma Else stirbt. Timo beschließt, im Dorf zu bleiben und sich dem Garten und der Petersilie zu widmen.", // Correct Option
+      "Timos Oma Else stirbt und hinterlässt ein emotionales Vakuum in Timos Leben, das ihn tiefer in seine Isolation treibt.",
+      "Timos Oma Else hinterlässt Timo ein mysteriöses Erbe, das ihn vor eine schwierige Entscheidung stellt."
+    ],
+    correctOption: 0,
+    feedback: "Timos Oma Else stirbt. Timo beschließt, im Dorf zu bleiben und sich dem Garten und der Petersilie zu widmen.",
+    progress: 10
+  },
+  // SCHRITT 33
+  {
+    question: "Situation: Ende des Drogenhandels. Die Drogenverkäufe der 3D finden ein Ende. Wie?",
+    options: [
+      "Die 3D werden von rivalisierenden Dealern bedroht und müssen ihr Drogengeschäft aufgeben, um sich und ihre Familien zu schützen.",
+      "Die 3D werden von der Polizei verhaftet und ihr Drogengeschäft wird aufgedeckt.",
+      "Die 3D beenden ihren Drogenverkauf. Richard ist enttäuscht, findet aber einen Moment der Normalität mit den 3D beim Biertrinken." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Die 3D beenden ihren Drogenverkauf. Richard ist enttäuscht, findet aber einen Moment der Normalität mit den 3D beim Biertrinken.",
+    progress: 10
+  },
+  // SCHRITT 34
+  {
+    question: "Situation: Richards \"Schutzschild\". Manfred will mit den 3D abrechnen. Wie wehren sie sich?",
+    options: [
+      "Richard nutzt seine Fähigkeit, Energie zu ziehen, um Manfred abzuwehren, als dieser mit den 3D abrechnen will.", // Correct Option
+      "Die 3D fliehen aus dem Dorf, um Manfred und den Konsequenzen ihrer Drogengeschäfte zu entgehen.",
+      "Die 3D verraten Manfred Informationen über Rasputins Organisation, um sich vor seiner Rache zu schützen."
+    ],
+    correctOption: 0,
+    feedback: "Richard nutzt seine Fähigkeit, Energie zu ziehen, um Manfred abzuwehren, als dieser mit den 3D abrechnen will.",
+    progress: 10
+  },
+  // SCHRITT 35
+  {
+    question: "Situation: Jennys und Valerys Flucht mit Martha. Jenny und Valery treffen eine gemeinsame Entscheidung. Welche?",
+    options: [
+      "Jenny und Valery machen sich tatsächlich auf den Weg zum \"letzten Transport\". Martha holt Valery mit dem Auto ab, und die beiden fahren gemeinsam weg. Jennys Schicksal bleibt offen.", // Correct Option
+      "Jenny und Valery trennen sich. Jenny beschließt, alleine nach Flora zu suchen, während Valery sich Martha anschließt in der Hoffnung, ihre Schlafkrankheit zu heilen.",
+      "Jenny und Valery entscheiden sich im letzten Moment gegen Martha und die \"Anderwelt\" und versuchen, die Polizei über Rasputins Machenschaften zu informieren."
+    ],
+    correctOption: 0,
+    feedback: "Jenny und Valery machen sich tatsächlich auf den Weg zum \"letzten Transport\". Martha holt Valery mit dem Auto ab, und die beiden fahren gemeinsam weg. Jennys Schicksal bleibt offen.",
+    progress: 10
+  },
+  // SCHRITT 36
+  {
+    question: "Situation: Epilog: Weihnachten und Weiterleben. Der Roman findet ein offenes Ende mit einem Epilog. Was thematisiert dieser?",
+    options: [
+      "Der Epilog deutet an, dass Rasputin und seine Organisation weiterhin aktiv sind und dass das Verschwinden von Jugendlichen im Dorf kein Ende gefunden hat.",
+      "Der Epilog zeigt Jenny, die Jahre später ins Dorf zurückkehrt und versucht, mit ihrer Vergangenheit abzuschließen und Antworten auf Floras Verschwinden zu finden.",
+      "Ein kurzer Epilog thematisiert das Weitergehen des Lebens im Dorf, insbesondere die Vorbereitung des Weihnachtsmarktes, trotz des Verschwindens der Teenager. Das Leben geht weiter, der Einzelhandel darf nicht leiden. Der Roman endet offen." // Correct Option
+    ],
+    correctOption: 2,
+    feedback: "Ein kurzer Epilog thematisiert das Weitergehen des Lebens im Dorf, insbesondere die Vorbereitung des Weihnachtsmarktes, trotz des Verschwindens der Teenager. Das Leben geht weiter, der Einzelhandel darf nicht leiden. Der Roman endet offen.",
+    progress: 10
+  }
+
+];
+
+  
+  let currentStep = 0;
+  let historyItems = [];
+  
+  function makeChoice(stepIndex, choiceIndex) {
+    const step = storySteps[stepIndex - 1];
+    const choices = document.getElementById('story-choices');
+    const buttons = choices.getElementsByTagName('button');
+    
+    // Markiere die gewählte Option
+    for (let i = 0; i < buttons.length; i++) {
+      if (i === choiceIndex) {
+        if (choiceIndex === step.correctOption) {
+          buttons[i].classList.add('correct');
+        } else {
+          buttons[i].classList.add('incorrect');
+        }
+      }
+    }
+    
+    // Wenn die Wahl falsch ist, nichts weiter tun
+    if (choiceIndex !== step.correctOption) {
+      setTimeout(() => {
+        for (let button of buttons) {
+          button.classList.remove('incorrect');
+        }
+      }, 1500);
+      return;
+    }
+    
+    // Füge die korrekte Wahl zur Historie hinzu
+    historyItems.push(`<strong>Schritt ${stepIndex}:</strong> ${step.options[step.correctOption]} - ${step.feedback}`);
+    updateHistory();
+    
+    // Aktualisiere den Fortschrittsbalken
+    document.getElementById('progress-bar').style.width = `${step.progress}%`;
+    
+    // Gehe zum nächsten Schritt oder beende das Spiel
+    currentStep++;
+    
+    if (currentStep < storySteps.length) {
+      // Zeige den nächsten Schritt an
+      setTimeout(() => {
+        const nextStep = storySteps[currentStep];
+        document.getElementById('story-text').innerHTML = `<p>${nextStep.question}</p>`;
+        
+        let choicesHTML = '';
+        nextStep.options.forEach((option, index) => {
+          choicesHTML += `<button onclick="makeChoice(${currentStep + 1}, ${index})">${option}</button>`;
+        });
+        
+        document.getElementById('story-choices').innerHTML = choicesHTML;
+      }, 1000);
+    } else {
+      // Spiel beendet
+      setTimeout(() => {
+        document.getElementById('story-text').innerHTML = `
+          <p><strong>Herzlichen Glückwunsch!</strong></p>
+          <p>Du hast die gesamte Handlung des Romans "Draußen feiern die Leute" von Sven Pfizemaier erfolgreich nachvollzogen.</p>
+          <p>Der Roman thematisiert die Suche nach Identität, das Gefühl des Andersseins in einer konformistischen Gemeinschaft und die Kraft, die in der Akzeptanz von Unterschieden liegt.</p>
+        `;
+        document.getElementById('story-choices').innerHTML = '';
+        document.getElementById('restart-button').style.display = 'block';
+      }, 1000);
+    }
+  }
+  
+  function updateHistory() {
+    const historyList = document.getElementById('history-list');
+    historyList.innerHTML = '';
+    
+    historyItems.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      historyList.appendChild(li);
+    });
+    
+    // Verstecke die Historie, wenn sie leer ist
+    document.getElementById('story-history').style.display = historyItems.length > 0 ? 'block' : 'none';
+  }
+  
+  function restartStory() {
+    currentStep = 0;
+    historyItems = [];
+    updateHistory();
+    
+    const firstStep = storySteps[0];
+    document.getElementById('story-text').innerHTML = `<p>${firstStep.question}</p>`;
+    
+    let choicesHTML = '';
+    firstStep.options.forEach((option, index) => {
+      choicesHTML += `<button onclick="makeChoice(1, ${index})">${option}</button>`;
+    });
+    
+    document.getElementById('story-choices').innerHTML = choicesHTML;
+    document.getElementById('progress-bar').style.width = '0%';
+    document.getElementById('restart-button').style.display = 'none';
+  }
+  
+  // Initialisierung des Spiels beim Laden
+  window.addEventListener('load', function() {
+    document.getElementById('story-history').style.display = 'none';
+    restartStory();
+  });
+</script>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Schulprojekt – Henning, Lasse, Timo und Lukas</p>
+  </footer>
+  
+  <script>
+    /* --- Figuren & Charakterisierung: Drag & Drop --- */
+    let draggedElement = null;
+    document.querySelectorAll('.draggable').forEach(item => {
+      item.addEventListener('dragstart', function(e) {
+        draggedElement = this;
+      });
+    });
+    document.querySelectorAll('.dropzone').forEach(zone => {
+      zone.addEventListener('dragover', function(e) {
+        e.preventDefault();
+      });
+      zone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        if(draggedElement) {
+          // Überprüfe, ob die zugewiesene ID passt
+          const dropId = this.id.split('-')[1];
+          const dragId = draggedElement.id.split('-')[1];
+          if(dropId === dragId) {
+            this.textContent = draggedElement.textContent + " – passende Zuordnung!";
+            document.getElementById('dragFeedback').textContent = "Richtig zugeordnet!";
+          } else {
+            document.getElementById('dragFeedback').textContent = "Falsche Zuordnung, versuche es nochmal.";
+          }
+        }
+      });
+    });
+    
+    /* --- Plot-Darstellung --- */
+    const plotEvents = [
+      "Das Dorf wird vorgestellt.",
+      "Timo, Jenny und Richard werden als Außenseiter charakterisiert.",
+      "Ein Konflikt rund ums Zwiebelfest entsteht.",
+      "Die Suche nach den Vermissten beginnt.",
+      "Unerwartete Wendungen führen zu einer großen Party."
+    ];
+    let currentPlotIndex = 0;
+    function showNextPlot() {
+      if (currentPlotIndex < plotEvents.length) {
+        document.getElementById('plotEvent').textContent = plotEvents[currentPlotIndex];
+        currentPlotIndex++;
+      } else {
+        document.getElementById('plotEvent').textContent = "Alle Ereignisse wurden angezeigt.";
+      }
+    }
+    
+    /* --- Motive & Themen --- */
+    function showMotiveInfo(motive) {
+  let info = "";
+  switch(motive) {
+    case "Identitätskrise und Selbstfindung":
+      info = "Die Protagonisten kämpfen mit der Frage, wer sie wirklich sind und wie sie sich in eine starr strukturierte Gesellschaft einfügen sollen. Timo, Valerie und Richard stehen für verschiedene Ansätze, ihren Platz in der Welt zu finden und sich selbst zu erkennen. Zentrale Themen des Coming-of-Age und der Selbstfindung, durchzogen von Selbstzweifeln, aber auch der Hoffnung auf Veränderung.";
+      break;
+    case "Zugehörigkeit und Ausgrenzung":
+      info = "Ein zentrales Thema ist die Schwierigkeit, sich irgendwo wirklich zugehörig zu fühlen. Valerie steht zwischen zwei Kulturen, Timo fühlt sich als Außenseiter. Der Roman thematisiert, wie Differenz und das Streben nach Individualität sowohl zur Isolation als auch zu einer stärkeren Selbstverwirklichung führen können. Die Figuren symbolisieren die Schmerzen der Andersartigkeit in einer starren Gemeinschaft und deren Auswirkungen auf ihre psychische Gesundheit.";
+      break;
+    case "Gesellschaftlicher Druck und Anpassung":
+      info = "Die Figuren empfinden einen starken Anpassungsdruck in ihrem ländlichen Heimatdorf. Es wird gezeigt, wie dieser Druck negative Auswirkungen auf die psychische Gesundheit und das Verhalten hat. Gesellschaftliche Normen und die Angst vor Isolation forcieren einen inneren Kampf zwischen Konformität und Authentizität.";
+      break;
+    case "Magischer Realismus und Surrealität":
+      info = "Magischer Realismus wird verwendet, um innere Konflikte und die subjektive Wahrnehmung der Welt darzustellen. Surreale Elemente wie der Drogendealer Rasputin und die Traumwelten von Valerie reflektieren tiefere emotionale und psychologische Zustände und verstärken das Gefühl der Entfremdung.";
+      break;
+    case "Erwachsenwerden / Identitätssuche":
+      info = "Im Zentrum stehen Teenager an der Schwelle zum Erwachsenenalter. Sie sind mit Fragen der Selbstfindung und Identität konfrontiert. Die Suche nach dem eigenen Platz im Leben und in der Gesellschaft prägt ihren Weg.";
+      break;
+    case "Anderssein / Außenseitertum":
+      info = "Viele Figuren sind auf ihre Art 'mutantenhaft' oder besonders. Das Thema des Nicht-Normalseins wird lustvoll ausgekostet. Figuren wie Timo (pflanzenartig), Richard (Schlaftablette) und Valerie (Dornröschen) verkörpern das Anderssein.";
+      break;
+    case "Flucht und Eskapismus":
+      info = "Es besteht eine Sehnsucht nach dem Entkommen aus dem Dorfleben und der Enge. Die Suche nach einem 'anderen Ort', einer 'Anderwelt', wo alles besser ist, führt zu Flucht in Drogen (Speed, Gras), Partys und Beziehungen. Das 'Umherwandern' wird als Sehnsuchtsort dargestellt.";
+      break;
+    case "Kriminalität und Unterwelt":
+      info = "Drogenhandel wird als Mittel zum Zweck und zur Rebellion dargestellt. Dorfdiebe sind ein fester Bestandteil der Gemeinschaft, und ein mysteriöses kriminelles Mastermind (Rasputin) agiert im Hintergrund. Zudem zeigt sich die grausame Realität des Menschenhandels hinter der 'Anderwelt'-Fassade.";
+      break;
+    case "Familie und dysfunktionale Strukturen":
+      info = "Belastete Familienverhältnisse und Kommunikationsprobleme, wie bei Jenny und ihrem Vater, prägen das Bild. Strenge, übermächtige Familienstrukturen (symbolisiert durch Timos Oma) und die Hilflosigkeit der Eltern gegenüber den Problemen der Teenager stehen im Fokus.";
+      break;
+    case "Verlust und Trauer":
+      info = "Das Verschwinden von Flora und die Ungewissheit darüber, Valeries Trauer um ihren verstorbenen Vater während ihres Dauerschlafs sowie Timos Trauer um seine Oma zeichnen ein Bild von Verlust und tiefer emotionaler Belastung.";
+      break;
+    case "Realitätsflucht vs. Realität":
+      info = "Der Wunsch nach einer besseren, utopischen Welt ('Anderwelt') steht im Kontrast zur bitteren Erkenntnis, dass diese utopische Vorstellung ein Betrug und eine Falle ist. Die Konfrontation mit der harten Realität des Lebens und des Erwachsenwerdens wird deutlich.";
+      break;
+    case "Bewegung und Stillstand":
+      info = "Das ständige 'in Bewegung bleiben' wird als Ideal dargestellt, während Rasputins Philosophie der 'dauerhaften Bewegung' als Sicherheit dient. Richard, der als 'Schlaftablette' bezeichnet wird, symbolisiert zugleich Stillstand und den Verkauf von Speed, das für Bewegung steht.";
+      break;
+    case "Das Dorf als Mikrokosmos":
+      info = "Das Dorf in der Nähe von Hannover dient als zentraler Schauplatz, ein Mikrokosmos mit Eigenheiten, Gerüchten und komplexen Beziehungen. Es spiegelt gesellschaftliche Probleme wider.";
+      break;
+    case "Legenden und Mythen":
+      info = "Figuren wie Rasputin werden zu Legenden und Mythen umgewandelt, umgeben von Gerüchten und fantastischen Erzählungen (Area 51, Eule, Zeitstillstand). Dabei verschwimmen die Grenzen zwischen Realität und Fantasie.";
+      break;
+    case "Humor und Surrealität":
+      info = "Lustvolle und absurde Situationen, kombiniert mit surrealen Elementen und Übertreibungen, prägen den Stil des Romans. Schwarzer Humor und Ironie verstärken die surreale Atmosphäre.";
+      break;
+    case "Musik und Party":
+      info = "\"Draußen feiern die Leute\" fungiert als Titel und Leitmotiv. Partys werden als Orte der Eskalation, des Kontrollverlusts und der Gemeinschaft dargestellt, während Musik als Ausdruck von Lebensgefühl und Rebellion dient.";
+      break;
+    case "Verwandlung / Metamorphose":
+      info = "Rasputins angebliche Verwandlung in eine Eule, Timos pflanzenartiges Wesen und die 'Mutantenhaftigkeit' vieler Figuren symbolisieren die innere Verwandlung der Teenager im Prozess des Erwachsenwerdens.";
+      break;
+    default:
+      info = "Keine Informationen verfügbar.";
+  }
+  document.getElementById('motiveInfo').textContent = info;
+}
+
+    
+    /* --- Dorfkarte --- */
+    function showDorfInfo(info) {
+      document.getElementById('dorfInfo').textContent = info;
+    }
+
+  </script>
+</body>
+</html>
